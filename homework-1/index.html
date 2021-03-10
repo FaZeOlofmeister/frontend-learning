@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework-1-YJC</title>
+</head>
+
+<body>
+    <h3>This is a dropdown which can accept input using &lt;input&gt; with &lt;datalist&gt;</h3>
+    Your nationality:
+    <input type="text" id="input" placeholder="You can input or select" list="list" />
+    <datalist id="list">
+        <option value="China">China</option>
+        <option value="United States">United States</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="Japan">Japan</option>
+    </datalist>
+    <button onclick="showResult()">submit</button>
+    <script>
+        function showResult() {
+            if(document.getElementById("input").value){
+                alert(document.getElementById("input").value+" is a beautiful place!");
+            }else{
+                alert("Please input or select your nationality!");
+            }
+        }
+    </script>
+</body>
+
+</html>
