@@ -1,0 +1,62 @@
+body {
+    font: 100% 宋体, 新宋体;
+    background: #cececd;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#container {
+    background: #bdc8ee;
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    text-align: left;
+}
+
+#header {
+    background: #f8dada;
+    padding: 0 10px;
+}
+
+#header h1 {
+    margin: 0;
+    padding-top: 10px;
+}
+
+#leftBar {
+    float: left;
+    width: 20%;
+    background: #ffffff;
+    padding: 15px 0;
+}
+
+#rightBar {
+    float: right;
+    width: 20%;
+    background: #ffffff;
+    padding: 15px 0;
+}
+
+#mainContent {
+    margin: 0 22% 0 22%;
+    background: #ffffff;
+    padding: 0 10px;
+}
+
+#footer {
+    padding: 0 10px;
+    background: #a1a0a0;
+}
+
+#footer p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.clearfloat {
+    clear: both;
+    height: 0;
+    font-size: 1px;
+    line-height: 0px;
+}

@@ -1,0 +1,62 @@
+body {
+    font: 100% 宋体, 新宋体;
+    background: #cececd;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#container {
+    background: #bdc8ee;
+    width: 1500px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    text-align: left;
+}
+
+#header {
+    background: #f8dada;
+    padding: 0 10px 0 20px;
+}
+
+#header h1 {
+    margin: 0;
+    padding-top: 10px;
+}
+
+#leftBar {
+    float: left;
+    width: 150px;
+    background: #ffffff;
+    padding: 15px 10px 15px 20px;
+}
+
+#rightBar {
+    float: right;
+    width: 150px;
+    background: #ffffff;
+    padding: 15px 10px 15px 20px;
+}
+
+#mainContent {
+    margin: 0 200px;
+    background: #ffffff;
+    padding: 0 10px;
+}
+
+#footer {
+    padding: 0 10px 0 20px;
+    background: #a1a0a0;
+}
+
+#footer p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.clearfloat {
+    clear: both;
+    height: 0;
+    font-size: 1px;
+    line-height: 0px;
+}
