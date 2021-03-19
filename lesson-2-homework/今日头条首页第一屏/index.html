@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>今日头条</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">下载app</a>
+                </li>
+                <div class="nav-divider"></div>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">注册头条号</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        上海 阴 11℃/13℃
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <p class="dropdown-item" style="font-size: xx-small;">上海 东北风3级 良99</p>
+                        <div class="dropdown-divider"></div>
+                        <span class="dropdown-item" href="#">
+                            <div style="float: left;">
+                                <p style="font-size: x-small;">今日&nbsp</p>
+                            </div>
+                            <div style="float: left;">
+                                <p style="font-size: x-small;">明日&nbsp</p>
+                            </div>
+                            <div style="float: left;">
+                                <p style="font-size: x-small;">后日</p>
+                            </div>
+                        </span>
+                    </div>
+                </li>
+            </ul>
+            <span class="navbar-text">
+                <a class="nav-link" href="#">侵权投诉</a>
+            </span>
+            <span class="navbar-text">
+                <a class="nav-link" href="#">头条产品</a>
+            </span>
+        </div>
+    </nav>
+    <div id="container">
+        <div id="leftBar">
+            <a class="logo" href="#"><img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANgAAAA2CAMAAACSsKctAAAANlBMVEVHcEzuQEDwRETyRUX3TEzvQkLuQEDuQUHuQUHvQEDuQUHuQEDvQkLuQEDuQUHwQUHxQkLtQEDKaksGAAAAEXRSTlMAxiweDlyo49Nri/F5+bhLOapXaIgAAATMSURBVGje7ZrpsqQqDIAb2VEE3/9lx263AAmu3XVv1cn8mFOtIh+JIQuvFyFSzdK8/jsSrbg7BG+HSdjPZi3iJPTchR7a7iYam7mGNvwKTM5vlOQd6n3Z37IhN6zSNhW1TsJqMt/TwQk6G3gxmt0DC5/LfpxS9U38wOJ9RJN38uG4KGBR0wRNxrcHtn4dlPjpv4pCYzqEEffBfAG2XDC9sxyCUbbfH3wVDdbkS2P4FzQGRR4As8NdsEYXy01Y4xMa28C6KljT3gUDXNtYOn5fY3UwNtwEA9+XA397+zONxR03fQ1MerjG0Is4QYK5riLzEMDdC4+CuQoY99sKoW9R20z5zsKwN0gAczDFUohdPzSKRpw4j9Yp0+Jg2GgCrHBf3sAVuIytC8u4RjIwYmGOh8AMvTutfLtgydR8ZjzCgeV32M7eFlyZj2T8GY3lfHwNmChTGmcP5tECNNFBf4m4AqEGhGt8rYEj2i+AwUhwFCocgOs+ok383MFfMecdoGYUHFwkW76Jz5kiHlmQ4TtPY48+iNAnfqgX1a+vtNMueXyjvqox5WTkJFgthq3t0i2ydhY+4MsbYhKMtEu6dxFseqw1Gd+s2raasylPRgCluoJJgnnU3SYaHbS8Y4rJBv3h42AFdN1gGzwWZtgcMHD3Xk5BfYOz67qlsWKDnq3G1DP74DTCZVwQVbA1X57WpWWqk40od4svgInKBrtUPJSpfGPGyYYC6zma/OjJm0RzBcwcBONltAzKIVYxfyBObJlbFAHAtKSyOla4x+c1FiuhAxvOiDcpWBKo4GDbp3sLDA2CJR07EGCaUZYJwUys5OGgBhdYCRYFIWQQHKzrjU/AXCUdQ8C0e0+Y295XwbSsFhiS4qLUC9hePsZ2QqqVT4I3NvtgvrfbXQLxkwsYUoWsgI37uX4GbOXj231+J332DPHsXKb+cknCkC2gkZ1iLQE2RtRPgiVJq6mAadVtUKL5CAea69v9qGxxs/KTMLFrVaozYLLi7UcwrVxWY3XYtjfu32q07cOF/Ob7YKpWLm0Emewj+7m43Ud5EGzdAvjJKnz/jTbCg2B2OBIpXgBzZl9a/xFdhBChwYWXYIEYe1GYzn6fHlPIE3rJDhBBTPxIPHYng5bDObEXQqrEK34PTP+B/c/A/kzxD+wUWLB1AXVJd8cUm3Jkv1W/SpmGlsiVOUw32GxPbMVbZtA9WwneGjo+Xun/34s8hEGLqQ+AgUaVff0cDHCpJ7stSZvKTVW//vNPoXVuNV3rVQ7WVR+juRjRfLqtMeuzkWOtG2SxdtrnuehrSc9utyBpwjwB5sp23eqdI33Og5Wm6IZan3eXKz/wcc8UYdl87ZOsrUtDZmzz6xIwoU9nB2CHKw5FLGBWVkQXzrTsu4Fvw1K+JGRWmjoPiTjto6eqysMeF08NFA0chRVu8jNRyzpogXpF6rF9LuSw2MVzHtnphMxRNLgj6IasdpCBNef8B+CKj53zyI5tWOqdATsP0VP7GPoYJd1QDQuuagw2f30xj9URaFF6MM8pMPSxfa7w4FmqxtTb4YgjCOVPReQRanvgKa5TGuvQ7j9+rq5QD6aNMqRa/LffKb9JvQoR6Al9XCQyrCZCIL5eX5Z4+QEscJfekj/2D7KhSDEKe9jHAAAAAElFTkSuQmCC"
+                    alt="今日头条" /></a>
+            <ul>
+                <li><a class="leftBar-item active" href="#">推荐</a></li>
+                <li><a class="leftBar-item" href="#">西瓜视频</a></li>
+                <li><a class="leftBar-item" href="#">热点</a></li>
+                <li><a class="leftBar-item" href="#">直播</a></li>
+                <li><a class="leftBar-item" href="#">图片</a></li>
+                <li><a class="leftBar-item" href="#">科技</a></li>
+                <li><a class="leftBar-item" href="#">娱乐</a></li>
+                <li><a class="leftBar-item" href="#">游戏</a></li>
+                <li><a class="leftBar-item" href="#">体育</a></li>
+                <li><a class="leftBar-item" href="#">懂车帝</a></li>
+                <li><a class="leftBar-item" href="#">财经</a></li>
+                <li><a class="leftBar-item" href="#">数码</a></li>
+            </ul>
+        </div>
+        <div id="rightBar">
+            <div class="search-wrapper"><input class="search-input" placeholder="搜索站内资讯、视频或用户" value="" />
+                <div class="search-btn"><button type="button">搜索</button></div>
+            </div>
+            <div class="login-wrapper">
+                <div class="login inner">
+                    <p class="login-msg">登录后可以保存您的浏览喜好、评论、收藏，并与APP同步，更可以发布微头条</p><a
+                        href="https://sso.toutiao.com"><button type="button" class="login-button">登录</button></a>
+                    <ul>
+                        <li class="third-login">QQ</li>
+                        <li class="third-login">微信</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pane-module">
+                <div class="module-head">更多</div>
+                <ul class="links-wrapper">
+                    <li class="item"><a target="_self" href="/about/" rel="">关于头条</a></li>
+                    <li class="item"><a target="_blank" href="https://job.bytedance.com"
+                            rel="noopener noreferrer">加入头条</a></li>
+                    <li class="item"><a target="_self" href="/report/" rel="">媒体报道</a></li>
+                    <li class="item"><a target="_self" href="/media_partners/" rel="">媒体合作</a></li>
+                    <li class="item"><a target="_self" href="/cooperation/" rel="">产品合作</a></li>
+                    <li class="item"><a target="_self" href="/media_cooperation/" rel="">合作说明</a></li>
+                    <li class="item"><a target="_blank" href="https://www.oceanengine.com/?source=pchomemore"
+                            rel="noopener noreferrer">广告投放</a></li>
+                    <li class="item"><a target="_self" href="/contact/" rel="">联系我们</a></li>
+                    <li class="item"><a target="_self" href="/user_agreement/" rel="">用户协议</a></li>
+                    <li class="item"><a target="_self" href="/privacy_protection/" rel="">隐私政策</a></li>
+                    <li class="item"><a target="_self" href="/complain/" rel="">侵权投诉</a></li>
+                    <li class="item"><a target="_self" href="/corrupt_report/" rel="">廉洁举报</a></li>
+                    <li class="item"><a target="_blank"
+                            href="https://renzheng.toutiao.com/guide?platform=%27PC%27&amp;source=%27www.toutiao.com%27"
+                            rel="noopener noreferrer">企业认证</a></li>
+                    <li class="item"><a target="_blank" href="https://hys.people-health.cn/m/#/pages/ncovSuff/index"
+                            rel="noopener noreferrer">肺炎求助</a></li>
+                    <li class="item"><a target="_blank" href="http://www.piyao.org.cn/2020yqpy"
+                            rel="noopener noreferrer">辟谣专区</a></li>
+                </ul>
+            </div>
+            <div class="pane-module ">
+                <div class="module-head">友情链接</div>
+                <ul class="links-wrapper">
+                    <li class="item"><a target="_blank" href="https://www.gmw.cn/" rel="noopener noreferrer">光明网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.cnr.cn/" rel="noopener noreferrer">央广网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.cri.cn" rel="noopener noreferrer">国际在线</a></li>
+                    <li class="item"><a target="_blank" href="http://www.tibet.cn/" rel="noopener noreferrer">中国西藏网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.cankaoxiaoxi.com/"
+                            rel="noopener noreferrer">参考消息</a></li>
+                    <li class="item"><a target="_blank" href="https://www.huanqiu.com/"
+                            rel="noopener noreferrer">环球网</a></li>
+                    <li class="item"><a target="_blank" href="http://www.cyol.com" rel="noopener noreferrer">中青在线</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.youth.cn/" rel="noopener noreferrer">中青网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.workercn.cn/" rel="noopener noreferrer">中工网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.haiwainet.cn/"
+                            rel="noopener noreferrer">海外网</a></li>
+                    <li class="item"><a target="_blank" href="http://h5.china.com.cn" rel="noopener noreferrer">中国网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.k618.cn/" rel="noopener noreferrer">未来网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://qianlong.com/" rel="noopener noreferrer">千龙网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.bjnews.com.cn/"
+                            rel="noopener noreferrer">新京报</a></li>
+                    <li class="item"><a target="_blank" href="https://www.ynet.com/" rel="noopener noreferrer">北青网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.fawan.com/" rel="noopener noreferrer">法制晚报</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.morningpost.com.cn"
+                            rel="noopener noreferrer">北京晨报</a></li>
+                    <li class="item"><a target="_blank" href="http://www.bbtnews.com.cn/"
+                            rel="noopener noreferrer">北京商报</a></li>
+                    <li class="item"><a target="_blank" href="http://www.stardaily.com.cn/"
+                            rel="noopener noreferrer">北京娱乐信报</a></li>
+                    <li class="item"><a target="_blank" href="https://www.oeeee.com/" rel="noopener noreferrer">奥一网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.ycwb.com/" rel="noopener noreferrer">金羊网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.hsw.cn/" rel="noopener noreferrer">华商网</a></li>
+                    <li class="item"><a target="_blank" href="https://www.xinmin.cn" rel="noopener noreferrer">新民网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.rednet.cn/index.html"
+                            rel="noopener noreferrer">红网</a></li>
+                    <li class="item"><a target="_blank" href="https://www.jschina.com.cn"
+                            rel="noopener noreferrer">中国江苏网</a></li>
+                    <li class="item"><a target="_blank" href="https://www.jxnews.com.cn/"
+                            rel="noopener noreferrer">中国江西网</a></li>
+                    <li class="item"><a target="_blank" href="http://www.iqilu.com/" rel="noopener noreferrer">齐鲁网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.hinews.cn/news/"
+                            rel="noopener noreferrer">南海网</a></li>
+                    <li class="item"><a target="_blank" href="http://www.ahwang.cn/" rel="noopener noreferrer">安徽网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.hebnews.cn/"
+                            rel="noopener noreferrer">河北新闻网</a></li>
+                    <li class="item"><a target="_blank" href="http://www.mnw.cn/" rel="noopener noreferrer">闽南网</a></li>
+                    <li class="item"><a target="_blank" href="https://www.hxnews.com/" rel="noopener noreferrer">海峡网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.voc.com.cn/"
+                            rel="noopener noreferrer">华声在线</a></li>
+                    <li class="item"><a target="_blank" href="https://tv.cztv.com" rel="noopener noreferrer">中国蓝TV</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.lnd.com.cn/" rel="noopener noreferrer">北国网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.longhoo.net/" rel="noopener noreferrer">龙虎网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="https://www.timedg.com/"
+                            rel="noopener noreferrer">东莞时间网</a></li>
+                    <li class="item"><a target="_blank" href="https://www.dcdapp.com/?zt=tt_pc_friendly_link"
+                            rel="noopener noreferrer">懂车帝</a></li>
+                    <li class="item"><a target="_blank" href="https://www.autohome.com.cn/"
+                            rel="noopener noreferrer">汽车之家</a></li>
+                    <li class="item"><a target="_blank" href="http://www.onlylady.com/"
+                            rel="noopener noreferrer">Onlylady女人志</a></li>
+                    <li class="item"><a target="_blank" href="https://123.chinaso.com/"
+                            rel="noopener noreferrer">中国搜索</a></li>
+                    <li class="item"><a target="_blank" href="https://www.nbd.com.cn/"
+                            rel="noopener noreferrer">每日经济新闻</a></li>
+                    <li class="item"><a target="_blank" href="https://www.cheshi.com/"
+                            rel="noopener noreferrer">网上车市</a></li>
+                    <li class="item"><a target="_blank" href="https://www.news18a.com/"
+                            rel="noopener noreferrer">网通社汽车</a></li>
+                    <li class="item"><a target="_blank" href="http://www.enorth.com.cn/"
+                            rel="noopener noreferrer">北方网</a></li>
+                    <li class="item"><a target="_blank" href="http://www.hnt.gov.cn/"
+                            rel="noopener noreferrer">湖南省旅发委官网</a></li>
+                    <li class="item"><a target="_blank" href="https://www.leju.com/" rel="noopener noreferrer">乐居网</a>
+                    </li>
+                    <li class="item"><a target="_blank" href="http://www.rmlt.com.cn/"
+                            rel="noopener noreferrer">人民论坛网</a></li>
+                    <li class="item"><a target="_blank" href="http://www.cfbond.com/"
+                            rel="noopener noreferrer">中国财富网</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="toolbar">
+            <div class="download shadow"><img src="" alt="" />
+                <p>扫码下载今日头条</p>
+            </div>
+            <ul class="tool-container shadow">
+                <li class="tool-item report-item"><a href="#" rel="noopener noreferrer"><img
+                            src="" /><span>网上有害信息举报</span></a>
+                </li>
+                <li class="tool-item"><img class="icon" src="" alt="" /></li>
+            </ul>
+        </div>
+        <div id="mainContent">
+            <ul>
+                <li>
+                    <h2>1</h2>
+                    11
+                </li>
+                <li>
+                    <h2>2</h2>
+                    22
+                </li>
+                <li>
+                    <h2>3</h2>
+                    33
+                </li>
+            </ul>
+        </div>
+        <br class="clearfloat" />
+    </div>
+    <div id="footer">
+        <p>Copyright &#169; <a href="https://github.com/FaZeOlofmeister">Ye Jiachen</a>, SJTU. All rights reserved.</p>
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
