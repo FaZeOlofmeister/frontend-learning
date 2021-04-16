@@ -18,7 +18,7 @@ export default class index extends React.Component {
 
     componentDidMount() {
         document.title = "今日头条(仿)"
-        fetch("/api/api")
+        fetch("/api/news")
             .then(res => res.json())
             .then(res => this.setState({ weather: res.weather, leftBarList: res.leftBarList, mainContentList:res.mainContentList }))
             .catch(err => console.log(err));

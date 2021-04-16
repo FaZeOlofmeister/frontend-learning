@@ -1,6 +1,6 @@
 ## 使用next.js实现今日头条第一屏
 
-构建了`navBar`、`leftBar`、`righrBar`、`toolBar`、`mainContent`、`footer`等多个组件，实现了从后端(`/api/api.js`)获取数据，采用循环渲染的方法。
+构建了`navBar`、`leftBar`、`righrBar`、`toolBar`、`mainContent`、`footer`等多个组件，实现了用**fetch API**从后端(`/api/api.js`)获取数据，采用循环渲染的方法。
 
 
 
