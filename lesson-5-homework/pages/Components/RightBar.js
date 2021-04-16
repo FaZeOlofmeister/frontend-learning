@@ -8,7 +8,7 @@ export default class RightBar extends React.Component {
     render() {
         return (
             <div id="rightBar">
-                <div className="search-wrapper"><input className="search-input" placeholder="搜索站内资讯、视频或用户" value="" />
+                <div className="search-wrapper"><input className="search-input" placeholder="搜索站内资讯、视频或用户" value="" readOnly={true} />
                     <div className="search-btn"><button type="button">搜索</button></div>
                 </div>
                 <div className="login-wrapper">

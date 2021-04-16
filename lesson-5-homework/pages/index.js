@@ -25,16 +25,16 @@ export default class index extends React.Component {
     }
 
     render() {
-        let leftBarItems = this.state.leftBarList.map((item) => {
+        let leftBarItems = this.state.leftBarList.map((item, index) => {
             if (item === this.state.leftBarList[0]) {
-                return <LeftBarItem data={item} active={1} />;
+                return <LeftBarItem data={item} active={1} key={index}/>;
             } else {
-                return <LeftBarItem data={item} active={0} />;
+                return <LeftBarItem data={item} active={0} key={index}/>;
             }
         });
 
-        let mainContentItems = this.state.mainContentList.map((item) => {
-            return <MainContentItem data={item} />;
+        let mainContentItems = this.state.mainContentList.map((item, index) => {
+            return <MainContentItem data={item} key={index}/>;
         });
 
         return (
