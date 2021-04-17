@@ -1,10 +1,10 @@
 import React from 'react'
-import NavBar from "./Components/NavBar";
-import LeftBarItem from "./Components/LeftBarItem";
-import RightBar from "./Components/RightBar"
-import ToolBar from "./Components/ToolBar"
-import MainContentItem from "./Components/MainContentItem"
-import Footer from "./Components/Footer"
+import NavBar from "../Components/NavBar";
+import LeftBarItem from "../Components/LeftBarItem";
+import RightBar from "../Components/RightBar"
+import ToolBar from "../Components/ToolBar"
+import MainContentItem from "../Components/MainContentItem"
+import Footer from "../Components/Footer"
 
 export default class index extends React.Component {
     constructor(props) {
