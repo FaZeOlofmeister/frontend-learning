@@ -1,0 +1,15 @@
+.stack {
+    margin: 10px;
+    padding: 10px 10px;
+    font-size: 18px;
+}
+
+.Tips {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+#InputSpace {
+    width: 70%;
+    margin-right: 5%;
+}
