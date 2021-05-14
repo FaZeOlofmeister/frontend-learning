@@ -59,7 +59,7 @@ export default function GetInput(props) {
     const [localSeq, setLocalSeq] = useState(props.seq);
     const [localMethod, setLocalMethod] = useState(props.method);
     const [localSelectedRowKeys, setLocalSelectedRowKeys] = useState(props.selectedRowKeys);
-    const [format, setFormat] = useState(false);
+    const [format, setFormat] = useState(props.seq.length>0);
     const [loading, setLoading] = useState(false);
     const submit = async () => {
         var seq = localSeq.toUpperCase();

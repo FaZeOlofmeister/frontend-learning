@@ -25,18 +25,22 @@ const columns = [
     {
         title: 'FDR',
         dataIndex: 'fdr',
+        responsive: ['lg'],
     },
     {
-        title: 'p',
+        title: 'p-value',
         dataIndex: 'p_value',
+        responsive: ['md'],
     },
     {
         title: 'Expression rate',
         dataIndex: 'expression_rate',
+        responsive: ['lg'],
     },
     {
         title: 'Fold change',
         dataIndex: 'fold_Change',
+        responsive: ['md'],
     },
     {
         title: 'Protein',
@@ -66,6 +70,7 @@ const columns = [
                 </Popover>
             </>
         ),
+        responsive: ['lg'],
     },
 ];
 

@@ -5,7 +5,7 @@ export default function Contact() {
         <div style={{margin:"0 8%"}}>
             <h2 className="panel-tittle">Contact us</h2>
             <table className="table table-hover">
-                <caption style={{ fontSize: "1.5em" }}>Please contact us for questions, comments, and suggestions.</caption>
+                <caption style={{ fontSize: "1.3em" }}>Please contact us for any questions, comments or suggestions.</caption>
                 <tbody>
                     <tr>
                         <td className="title">Addr:</td>
