@@ -37,7 +37,7 @@ export default function Index() {
     };
     let imgItems = imgList.map((item, idx) => {
         return (
-            <Carousel.Item>
+            <Carousel.Item key={idx}>
                 <img src={baseUrl + item} alt={idx} style={{ display: "block", width: "1100px", height: "500px" }} />
                 <Carousel.Caption>
                     <h3>{idx+1} slide</h3>

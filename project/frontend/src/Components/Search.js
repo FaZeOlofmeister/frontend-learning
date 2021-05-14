@@ -1,4 +1,3 @@
-import { Result } from "antd";
 import React, { useState } from "react";
 import GetInput from "./GetInput";
 import GetOutput from "./GetOutput";

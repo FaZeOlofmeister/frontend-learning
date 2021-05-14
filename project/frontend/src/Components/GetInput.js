@@ -1,22 +1,29 @@
 import React, { useState } from "react";
-import { Input, Button, Table, Radio } from "antd";
-import { SearchOutlined } from "@ant-design/icons";
+import { Input, Button, Table, Radio, Upload } from "antd";
+import { SearchOutlined, UploadOutlined } from "@ant-design/icons";
 import "./GetInput.css"
 
 const dataSource = [
     {
         key: "1",
         CancerType: "Gastric Cancer",
-        Publications: "PMID:30645970",
+        Publications: "30645970",
         Quantitation: "iTRAQ4",
         PatientNum: 80,
     },
     {
         key: "2",
         CancerType: "Lung Adenocarcinoma",
-        Publications: "PMID:30645970",
+        Publications: "30645970",
         Quantitation: "TMT10",
         PatientNum: 111,
+    },
+    {
+        key: "3",
+        CancerType: "Hepatocellular carcinoma(HCC)",
+        Publications: "30645970",
+        Quantitation: "TMT11",
+        PatientNum: 165,
     },
 ];
 
@@ -28,14 +35,20 @@ const columns = [
     {
         title: "Publications",
         dataIndex: "Publications",
+        responsive: ['md'],
+        render: (text, record) => (
+            <p>PMID:<a href={`https://pubmed.ncbi.nlm.nih.gov/${record.Publications}`} target="_blank" rel="noopener noreferrer" >{record.Publications}</a></p>
+        ),
     },
     {
         title: "Quantitation",
         dataIndex: "Quantitation",
+        responsive: ['lg'],
     },
     {
         title: "PatientNum",
         dataIndex: "PatientNum",
+        responsive: ['lg'],
     }
 ];
 
@@ -49,7 +62,7 @@ export default function GetInput(props) {
     const [format, setFormat] = useState(false);
     const [loading, setLoading] = useState(false);
     const submit = async () => {
-        var seq = localSeq;
+        var seq = localSeq.toUpperCase();
         const str_li = seq.split("\n");
         str_li.shift();
         seq = str_li.join("");
@@ -69,10 +82,10 @@ export default function GetInput(props) {
         props.setMethod(localMethod);
         props.setSelectedRowKeys(localSelectedRowKeys);
         props.setDone(true);
-    }
+    };
 
     const getSeq = (e) => {
-        var seq = e.target.value.toString().toUpperCase();
+        var seq = e.target.value.toString();
         var flag;
         if (seq[0] === ">") {
             flag = true
@@ -80,18 +93,19 @@ export default function GetInput(props) {
             flag = false
         }
         setLocalSeq(seq);
+        console.log(localSeq)
         setFormat(flag);
-    }
+    };
 
     const searchMethod = (e) => {
         console.log("search method changed, ", e.target.value)
         setLocalMethod(e.target.value);
-    }
+    };
 
     const onSelectChange = selectedRowKeys => {
         console.log("selectedDataBases changed: ", selectedRowKeys);
         setLocalSelectedRowKeys(selectedRowKeys);
-    }
+    };
 
     const clear = () => {
         setLoading(true);
@@ -102,13 +116,23 @@ export default function GetInput(props) {
             setFormat(false);
             setLoading(false);
         }, 500);
+    };
+
+    const getUpload = (file) => {
+        const reader = new FileReader();
+        reader.readAsText(file);
+        reader.onload = (result) => {
+            setLocalSeq(result.target.result)
+        }
+        setFormat(true);
+        return false;
     }
 
     const rowSelection = {
         selectedRowKeys: localSelectedRowKeys,
         onChange: onSelectChange
     };
-    const hasInput = localSeq.length > 0 || localMethod == 1 || localSelectedRowKeys.length > 0;
+    const hasInput = localSeq.length > 0 || localMethod === 1 || localSelectedRowKeys.length > 0;
     const radioStyle = {
         display: "block",
         height: "32px",
@@ -117,7 +141,7 @@ export default function GetInput(props) {
     }
 
     return (
-        <div style={{ padding: "0 25px" }}>
+        <div style={{ padding: "0 3%" }}>
             <div id="SearchBox" className="stack">
                 <div className="Tips">Sequence input</div>
                 <Input.Group style={{ width: "100%" }}>
@@ -128,31 +152,37 @@ export default function GetInput(props) {
                         onChange={getSeq}
                         value={localSeq}
                     />
-                    <input type="file" style={{ width: "25%", paddingRight: 0 }} />
+                    <Upload action="" accept="text/plain" beforeUpload={getUpload} showUploadList={false}>
+                        <Button icon={<UploadOutlined />}>Click to Upload</Button>
+                    </Upload>,
                 </Input.Group>
             </div>
             <div id="Method" className="stack">
                 <div className="Tips">Matching method</div>
                 <Radio.Group onChange={searchMethod} value={localMethod}>
-                    <Radio style={radioStyle} value={1}>
-                        Blast: Fuzzy matching between sequence and database
-                        </Radio>
                     <Radio style={radioStyle} value={0}>
-                        Precise: Exact matching between sequence and database character
-                        </Radio>
+                        Precise<i className="lg-hide">: Exact matching between sequence and database character</i>
+                    </Radio>
+                    <Radio style={radioStyle} value={1}>
+                        Fuzzy<i className="lg-hide">: Fuzzy matching between sequence and database</i>
+                    </Radio>
+                    <Radio style={radioStyle} value={2}>
+                        BLAST<i className="lg-hide">: BLAST alignment between sequence and database</i>
+                    </Radio>
                 </Radio.Group>
             </div>
             <div style={{ margin: "10px" }} className="stack">
-                <div className="Tips">Reference database</div>
-                <span style={{ marginLeft: 8, fontSize: "16px" }}>
+                <div className="Tips lg-hide">Reference database</div>
+                <span style={{ marginLeft: 8, fontSize: "16px" }} className="lg-hide">
                     {`Selected ${localSelectedRowKeys.length} dataBases`}
                 </span>
                 <Table
                     rowSelection={rowSelection}
                     columns={columns}
                     dataSource={dataSource}
+                    pagination={false}
                 />
-                <Button onClick={clear} disabled={!hasInput} loading={loading}>
+                <Button danger onClick={clear} disabled={!hasInput} loading={loading} style={{ margin: "10px 10px" }}>
                     Reload
                 </Button>
             </div>
@@ -163,10 +193,10 @@ export default function GetInput(props) {
                     icon={<SearchOutlined />}
                     shape="round"
                     size="large"
-                    disabled={!format}
+                    disabled={!format || localSelectedRowKeys.length === 0}
                     onClick={submit}
                 >
-                    {format ? "search" : "invalid format"}
+                    {(format && localSelectedRowKeys.length > 0) ? "search" : "invalid format"}
                 </Button>
             </div>
         </div>
