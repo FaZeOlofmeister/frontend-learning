@@ -63,7 +63,7 @@ const columns = [
 
                     return (
                         <Tag color={switchColor(idx)} key={idx} target="blank">
-                            <a href={url}>{tag}</a>
+                            <a href={url} target="_blank" rel="noopener noreferrer" >{tag}</a>
                         </Tag>
                     )
                 })}
