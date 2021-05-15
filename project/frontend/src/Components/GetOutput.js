@@ -8,7 +8,7 @@ const switchColor = (idx) => {
         case 1: color = "#2db7f5"; break;
         case 2: color = "#87d068"; break;
         case 3: color = "#108ee9"; break;
-        default:color = "";break;
+        default: color = ""; break;
     }
     return color;
 };
@@ -17,6 +17,8 @@ const columns = [
     {
         title: 'ID',
         dataIndex: 'id',
+        defaultSortOrder: 'ascend',
+        sorter: (a, b) => a.id - b.id,
     },
     {
         title: 'Sequence',
@@ -26,21 +28,29 @@ const columns = [
         title: 'FDR',
         dataIndex: 'fdr',
         responsive: ['lg'],
+        defaultSortOrder: 'descend',
+        sorter: (a, b) => a.fdr - b.fdr,
     },
     {
         title: 'p-value',
         dataIndex: 'p_value',
         responsive: ['md'],
+        defaultSortOrder: 'descend',
+        sorter: (a, b) => a.p_value - b.p_value,
     },
     {
         title: 'Expression rate',
         dataIndex: 'expression_rate',
         responsive: ['lg'],
+        defaultSortOrder: 'descend',
+        sorter: (a, b) => a.expression_rate - b.expression_rate,
     },
     {
         title: 'Fold change',
         dataIndex: 'fold_Change',
         responsive: ['md'],
+        defaultSortOrder: 'descend',
+        sorter: (a, b) => a.fold_Change - b.fold_Change,
     },
     {
         title: 'Protein',

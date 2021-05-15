@@ -30,7 +30,7 @@ export default function Index() {
         controls: true,
         wrap: true,
         autoPlay: true,
-        interval: 4000,
+        interval: 3000,
         pause: "hover",
         defaultActiveIndex: 0,
         style: { width: "70%", marginLeft: "15%" }

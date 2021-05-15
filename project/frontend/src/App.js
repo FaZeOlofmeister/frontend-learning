@@ -19,7 +19,7 @@ export default function App() {
         mainContent = <Contact />
     }
     return (
-        <Layout>
+        <Layout style={{ minHeight: "100%" }}>
             <Sider
                 style={{
                     overflow: "auto",
@@ -52,18 +52,18 @@ export default function App() {
                     </Menu.Item>
                 </Menu>
             </Sider>
-            <Layout id="mainContent">
+            <Layout id="mainContent" style={{ minHeight: "100%" }}>
                 <Header className="site-layout-sub-header-background lg-hide" style={{ padding: 30, height: 150 }} >
                     <h2 style={{ color: "red" }}>Welcome to use CPD！</h2>
                     <p><i>It might be the best <b>cancer peptide database</b> you have ever seen!</i></p>
                 </Header>
-                <Content style={{ margin: '24px 16px 0' }}>
-                    <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
+                <Content style={{ margin: '24px 16px 0',minHeight:"80%" }}>
+                    <div className="site-layout-background" style={{ padding: 20, minHeight: "100%" }}>
                         {mainContent}
                     </div>
                 </Content>
-                <Footer style={{ textAlign: "center" }}>
-                    <p style={{ fontSize: '15px' }}>Copyright &#169; <a href="http://cbb.sjtu.edu.cn/~jingli/">Jing Li's group</a>, SJTU. All rights reserved.</p>
+                <Footer style={{ textAlign: "center" ,height:"7.8%"}}>
+                    <p style={{ fontSize: '16px' }}>Copyright &#169; <a href="http://cbb.sjtu.edu.cn/~jingli/">Jing Li's group</a>, SJTU. All rights reserved.</p>
                 </Footer>
             </Layout>
         </Layout>
