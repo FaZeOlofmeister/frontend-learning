@@ -1,6 +1,10 @@
+import { useEffect } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Contact() {
+    useEffect(() => {
+        document.title = "pepAnno | Contact"
+    },[]);
     return (
         <div style={{margin:"0 8%"}}>
             <h2 className="panel-tittle">Contact us</h2>

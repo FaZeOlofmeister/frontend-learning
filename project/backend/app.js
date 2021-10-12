@@ -23,7 +23,7 @@ var getImg = require('./routes/getImg');
 app.use('/getImg', getImg);
 var searchRouter = require('./routes/search');
 app.use('/search', searchRouter);
-app.use('/static', express.static('public'))
+app.use('/static', express.static('public'));
 
 
 // catch 404 and forward to error handler

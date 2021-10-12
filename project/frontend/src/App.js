@@ -2,21 +2,24 @@ import React, { useState } from "react";
 import { Layout, Menu } from "antd";
 import { MessageOutlined, HomeOutlined, SearchOutlined } from "@ant-design/icons";
 import "./App.css";
-import Search from "./Components/Search"
-import Index from "./Components/Index"
-import Contact from "./Components/Contact"
+import Search from "./Components/Search";
+import Home from "./Components/Home";
+import Contact from "./Components/Contact";
+import Download from "./Components/Download";
 
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function App() {
-    const [route, setRoute] = useState("index");
+    const [route, setRoute] = useState("home");
     var mainContent;
-    if (route === "index") {
-        mainContent = <Index />
+    if (route === "home") {
+        mainContent = <Home />;
     } else if (route === "search") {
-        mainContent = <Search />
+        mainContent = <Search />;
+    } else if (route === "download") {
+        mainContent = <Download />;
     } else {
-        mainContent = <Contact />
+        mainContent = <Contact />;
     }
     return (
         <Layout style={{ minHeight: "100%" }}>
@@ -37,15 +40,18 @@ export default function App() {
                 }}
             >
                 <div style={{ margin: 10, padding: 10 }}>
-                    <a href='/' style={{ fontSize: '30px', color: "red" }} className="lg-hide">CPD</a>
-                    <p style={{ color: "white" }} className="lg-hide"><i>The best cancer peptide database you have ever seen!</i></p>
+                    <a href='/' style={{ fontSize: '30px', color: "red" }} className="lg-hide">pepAnno</a>
+                    <p style={{ color: "white" }} className="lg-hide"><i>an integrated peptide-centric database with large-scale proteome annotation</i></p>
                 </div>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['index']} style={{ fontSize: '18px', marginTop: '13px' }}>
-                    <Menu.Item key="index" icon={<HomeOutlined />} onClick={() => setRoute("index")}>
-                        Index
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['home']} style={{ fontSize: '18px', marginTop: '13px' }}>
+                    <Menu.Item key="home" icon={<HomeOutlined />} onClick={() => setRoute("home")}>
+                        Home
                     </Menu.Item>
                     <Menu.Item key="search" icon={<SearchOutlined />} onClick={() => setRoute("search")}>
                         Search
+                    </Menu.Item>
+                    <Menu.Item key="download" icon={<SearchOutlined />} onClick={() => setRoute("download")}>
+                        Download
                     </Menu.Item>
                     <Menu.Item key="contact" icon={<MessageOutlined />} onClick={() => setRoute("contact")}>
                         Contact Us
@@ -54,8 +60,8 @@ export default function App() {
             </Sider>
             <Layout id="mainContent" style={{ minHeight: "100%" }}>
                 <Header className="site-layout-sub-header-background lg-hide" style={{ padding: 30, height: 150 }} >
-                    <h2 style={{ color: "red" }}>Welcome to use CPD！</h2>
-                    <p><i>It might be the best <b>cancer peptide database</b> you have ever seen!</i></p>
+                    <h2 style={{ color: "red" }}>Welcome to use pepAnno！</h2>
+                    <p><i>This is an integrated peptide-centric database with large-scale proteome annotation </i></p>
                 </Header>
                 <Content style={{ margin: '24px 16px 0',minHeight:"80%" }}>
                     <div className="site-layout-background" style={{ padding: 20, minHeight: "100%" }}>

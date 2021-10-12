@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GetInput from "./GetInput";
 import GetOutput from "./GetOutput";
 
 export default function Search() {
+    useEffect(() => {
+        document.title = "pepAnno | Search"
+    },[]);
     const [result, setResult] = useState([]);
     const [done, setDone] = useState(false);
     const [seq, setSeq] = useState("");
