@@ -46,10 +46,22 @@ const columns = [
         sorter: (a, b) => a.expression_rate - b.expression_rate,
     },
     {
-        title: 'Fold change',
+        title: 'Fold change (T/N)',
         dataIndex: 'fold_Change',
         responsive: ['md'],
         defaultSortOrder: 'descend',
+        render: value => {
+            var color="black";
+            if(value>=1.1){
+                color="red";
+            }
+            else if(value<0.9){
+                color="green";
+            }
+            return (
+                <p style={{color:color}}>{value}</p>
+            );
+        },
         sorter: (a, b) => a.fold_Change - b.fold_Change,
     },
     {
@@ -62,7 +74,7 @@ const columns = [
                     const url = "https://www.uniprot.org/uniprot/" + tag
 
                     return (
-                        <Tag color={switchColor(idx)} key={idx} target="blank">
+                        <Tag key={idx} target="blank">
                             <a href={url} target="_blank" rel="noopener noreferrer" >{tag}</a>
                         </Tag>
                     )

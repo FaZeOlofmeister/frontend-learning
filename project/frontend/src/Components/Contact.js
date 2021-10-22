@@ -24,9 +24,9 @@ export default function Contact() {
                     <tr>
                         <td className="title">E-mail:</td>
                         <td>
+                            Jing Li: <a href="mailto:jing.li@sjtu.edu.cn">jing.li@sjtu.edu.cn</a> <br />
+                            Jingya Jia: <a href="mailto:Jiajingya@sjtu.edu.cn">Jiajingya@sjtu.edu.cn</a> <br />
                             Jiachen Ye: <a href="mailto:numbsoul@sjtu.edu.cn">numbsoul@sjtu.edu.cn</a> <br />
-                                Jing Li: <a href="mailto:jing.li@sjtu.edu.cn">jing.li@sjtu.edu.cn</a> <br />
-                                Jingya Jia: <a href="mailto:Jiajingya@sjtu.edu.cn">Jiajingya@sjtu.edu.cn</a> <br />
                         </td>
                     </tr>
                     <tr>

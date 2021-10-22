@@ -103,7 +103,7 @@ export default function GetInput(props) {
     };
 
     const onSelectChange = selectedRowKeys => {
-        console.log("selectedDataBases changed: ", selectedRowKeys);
+        console.log("selected databases changed: ", selectedRowKeys);
         setLocalSelectedRowKeys(selectedRowKeys);
     };
 
@@ -182,21 +182,17 @@ export default function GetInput(props) {
                     dataSource={dataSource}
                     pagination={false}
                 />
-                <Button danger onClick={clear} disabled={!hasInput} loading={loading} style={{ margin: "10px 10px" }}>
-                    Reload
-                </Button>
-            </div>
-
-            <div id="SearchButton" className="stack" style={{ position: "fixed", right: "8%", bottom: "15%" }}>
                 <Button
                     type="primary"
                     icon={<SearchOutlined />}
-                    shape="round"
-                    size="large"
                     disabled={!format || localSelectedRowKeys.length === 0}
                     onClick={submit}
+                    style={{ margin: "10px 10px" }}
                 >
-                    {(format && localSelectedRowKeys.length > 0) ? "search" : "invalid format"}
+                    {(format && localSelectedRowKeys.length > 0) ? "Search" : "Invalid format"}
+                </Button>
+                <Button danger onClick={clear} disabled={!hasInput} loading={loading}>
+                    <b>Reload</b>
                 </Button>
             </div>
         </div>
